@@ -1,15 +1,6 @@
-# MVX - Co-Simulation Framework for Digital Twin AI in Vehicular Communication
+# MVX - Co-Simulation Framework for Digital Twin AI in 6G V2X Networks.
 
 Welcome to the repository for the MVX website! This site showcases the **MVX Co-Simulation Framework**, a groundbreaking tool for **Digital Twin AI applications** in **vehicular communication systems**. The website contains detailed information on the features, applications, and research papers related to MVX.
-
-## Table of Contents
-- [About the Website](#about-the-website)
-- [Website Features](#website-features)
-- [Technologies Used](#technologies-used)
-- [Setup Instructions](#setup-instructions)
-- [How to Contribute](#how-to-contribute)
-- [License](#license)
-- [Contact](#contact)
 
 ## About the Website
 
@@ -58,28 +49,13 @@ Follow these steps to get the website up and running locally or to make modifica
 5. **Deploying to GitHub Pages**:
     - Make sure the website is hosted on GitHub Pages. Follow [GitHub Pages Setup](https://pages.github.com/) for deployment instructions.
 
-## How to Contribute
+## How to Cite our Paper:
 
-We welcome contributions! Here's how you can contribute:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b new-feature`).
-3. Commit your changes (`git commit -m 'Add a new feature'`).
-4. Push to the branch (`git push origin new-feature`).
-5. Open a pull request to the `main` branch of this repository.
-
-### Reporting Issues
-
-If you find any bugs or have feature suggestions, please [open an issue](https://github.com/your-username/mvx-website/issues).
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
 ## Contact
 
 For any questions or inquiries, feel free to reach out:
-- **Email**: [your-email@example.com](mailto:your-email@example.com)
-- **Website**: [https://your-website-url.com](https://your-website-url.com)
+- **Email**: [Email](gharsallahghazi@gmail.com)
+- **Website**: [Website](https://ghazigh.github.io/MVX/)
 
 Thank you for visiting the MVX website repository!
