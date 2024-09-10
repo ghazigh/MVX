@@ -22,6 +22,16 @@ header nav {
     justify-content: space-between;
     align-items: center;
 }
+/* Style for the clickable MVX logo */
+.logo a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Make the text white */
+}
+
+.logo a:hover {
+    color: white; /* Keep the color white on hover */
+    text-decoration: none; /* Ensure no underline on hover */
+}
 
 header .logo h1 {
     margin: 0;
@@ -48,9 +58,31 @@ header ul li a:hover {
     border-radius: 5px;
 }
 
+/* Main Title in Hero Section */
+#hero .main-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
 /* Hero Section */
 #hero {
-    background: url('scene.jpg') no-repeat center center/cover;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -107,9 +139,10 @@ header ul li a:hover {
     margin-bottom: 1.5rem;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
 }
 
@@ -118,11 +151,159 @@ header ul li a:hover {
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.feature-item img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
 .feature-item h3 {
     font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Hover Animation */
+.feature-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Applications Section */
+#applications {
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+#applications h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.applications-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.applications-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 1rem;
     margin-bottom: 1rem;
+    border-left: 5px solid #ff6f61;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.applications-list li img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.application-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.application-button {
+    background: #333;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+.application-button:hover {
+    background: #555;
+}
+
+/* Hover Animation for Application Items */
+.applications-list li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Research Paper Section */
+#paper {
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+#paper h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#paper .paper-image {
+    max-width: 800px;
+    margin: 0 auto 1rem;
+}
+
+#paper .paper-image img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+#paper .download-link {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#paper .download-link:hover {
+    background: #555;
+}
+
+/* Code and Dataset Section */
+#code-dataset {
+    padding: 2rem;
+    background-color: #e8e8e8;
+    text-align: center;
+}
+
+#code-dataset h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.code-dataset-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.code-dataset-list li {
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #ff6f61;
 }
 
 /* Citation Section */
@@ -153,31 +334,18 @@ header ul li a:hover {
     text-align: center;
 }
 
-#contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-#contact input, #contact textarea {
-    padding: 1rem;
-    font-size: 1.1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#contact button {
+#contact .email-button {
     background: #333;
     color: #fff;
-    padding: 1rem;
-    border: none;
-    cursor: pointer;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
     transition: background 0.3s ease;
+    display: inline-block;
 }
 
-#contact button:hover {
+#contact .email-button:hover {
     background: #555;
 }
 
