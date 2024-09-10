@@ -2,7 +2,7 @@
 
 Welcome to the repository for the MVX website! This site showcases the **MVX Co-Simulation Framework**, a groundbreaking tool for **Digital Twin AI applications** in **vehicular communication systems**. The website contains detailed information on the features, applications, and research papers related to MVX.
 
-![](MVX.webp)
+<img src="MVX.webp" alt="MVX Framework Overview" width="300"/>
 
 ## How to Cite our Paper:
 
