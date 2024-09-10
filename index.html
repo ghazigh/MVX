@@ -3,19 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MVX Co-Simulation Framework for Advanced Digital Twin AI in Vehicular Communication">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="MVX Co-Simulation Framework for Advanced Digital Twin AI in Vehicular Communication. Explore its features, applications, and research.">
+    <meta name="keywords" content="MVX, Co-Simulation, Digital Twin AI, Vehicular Communication, Autonomous Vehicles, Smart Cities, Transportation Logistics, Telematics, Research and Development">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="MVX - Digital Twin AI for Vehicular Communication">
+    <meta property="og:description" content="MVX Co-Simulation Framework for Advanced Digital Twin AI in Vehicular Communication. Discover its features, applications, and research.">
+    <meta property="og:image" content="https://your-website-url.com/path-to-your-image.jpg">
+    <meta property="og:url" content="https://your-website-url.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MVX - Digital Twin AI for Vehicular Communication">
+    <meta name="twitter:description" content="Explore the advanced features of MVX, the Co-Simulation Framework for vehicular communication.">
+    <meta name="twitter:image" content="https://your-website-url.com/path-to-your-image.jpg">
+    
     <title>MVX - Digital Twin AI for Vehicular Communication</title>
+    
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://your-website-url.com">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <nav>
             <div class="logo">
-                <h1>MVX</h1>
+                <a href="#">
+                    <h1>MVX</h1>
+                </a>
             </div>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#features">Features</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#paper">MVX Paper</a></li>
+                <li><a href="#code-dataset">Code & Dataset</a></li>
                 <li><a href="#cite">How to Cite</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -24,6 +52,7 @@
 
     <section id="hero">
         <div class="hero-content">
+            <h1 class="main-title">MVX</h1>
             <h2>Advanced Co-Simulation for Vehicular Communication</h2>
             <p>Unlock the potential of Digital Twins with MVX for vehicular AI applications.</p>
             <a href="#features" class="cta-button">Learn More</a>
@@ -32,58 +61,114 @@
 
     <section id="about">
         <h2>About MVX</h2>
-        <p>MVX is a groundbreaking co-simulation framework and database designed to power advanced AI-driven digital twin applications in vehicular communication systems. With MVX, you can simulate, predict, and optimize real-time vehicular networks in an efficient and scalable way.</p>
+        <p>MVX is the world’s first configurable and scalable co-simulation framework that incorporates realistic physical world simulation with a differentiable accurate ray tracing wireless simulation that generates multi-agent and multimodal datasets for AI-driven digital twin applications in vehicular communication systems.</p>
     </section>
 
     <section id="features">
         <h2>Key Features</h2>
-        <div class="features-grid">
+        <div class="feature-list">
             <div class="feature-item">
-                <h3>Real-time Co-Simulation</h3>
-                <p>Simulate complex vehicular networks in real-time with AI-powered algorithms.</p>
+                <img src="F1.png" alt="Real-time Co-Simulation">
+                <h3>High-Fidelity Co-Simulation</h3>
+                <p>MVX provides high-fidelity realistic co-simulation thanks to the realistic quality of the CARLA simulator and the high quality of Ray-traced wireless data of the sionna simulator.</p>
             </div>
             <div class="feature-item">
-                <h3>AI Integration</h3>
-                <p>Integrate advanced AI models to predict and optimize vehicular communication scenarios.</p>
+                <img src="F2.png" alt="AI Integration">
+                <h3>Configurability</h3>
+                <p>MVX provides a highly configurable simulation that allows all aspects of the physical world and the wireless environment to be manipulated.</p>
             </div>
             <div class="feature-item">
-                <h3>Scalable Solutions</h3>
+                <img src="F3.png" alt="Scalable Solutions">
+                <h3>Multimodality</h3>
                 <p>MVX is designed for large-scale vehicular communication systems, ensuring optimal performance under heavy loads.</p>
             </div>
             <div class="feature-item">
+                <img src="F4.png" alt="Database Management">
                 <h3>Database Management</h3>
                 <p>Efficient data handling and management for comprehensive digital twin solutions.</p>
             </div>
         </div>
     </section>
 
+    <section id="applications">
+        <h2>Main Applications of MVX</h2>
+        <p>MVX serves a wide range of industries and sectors with cutting-edge vehicular communication solutions. Key applications include:</p>
+        <ul class="applications-list">
+            <li>
+                <img src="path-to-autonomous-vehicles-image.jpg" alt="Autonomous Vehicles">
+                <div class="application-content">
+                    <strong>Autonomous Vehicles:</strong>
+                    <p>Simulate and optimize real-time communication between autonomous cars.</p>
+                    <a href="link-to-autonomous-vehicles-paper.pdf" class="application-button">Read Paper</a>
+                </div>
+            </li>
+            <li>
+                <img src="path-to-smart-cities-image.jpg" alt="Smart Cities">
+                <div class="application-content">
+                    <strong>Smart Cities:</strong>
+                    <p>Manage vehicular networks and communication for efficient traffic control and infrastructure planning.</p>
+                    <a href="link-to-smart-cities-paper.pdf" class="application-button">Read Paper</a>
+                </div>
+            </li>
+            <li>
+                <img src="path-to-transportation-logistics-image.jpg" alt="Transportation Logistics">
+                <div class="application-content">
+                    <strong>Transportation Logistics:</strong>
+                    <p>Integrate AI for optimal route planning and communication within transportation fleets.</p>
+                    <a href="link-to-transportation-logistics-paper.pdf" class="application-button">Read Paper</a>
+                </div>
+            </li>
+            <li>
+                <img src="path-to-telematics-image.jpg" alt="Telematics">
+                <div class="application-content">
+                    <strong>Telematics:</strong>
+                    <p>Real-time vehicle monitoring, tracking, and communication for enhanced safety and management.</p>
+                    <a href="link-to-telematics-paper.pdf" class="application-button">Read Paper</a>
+                </div>
+            </li>
+            <li>
+                <img src="path-to-rd-image.jpg" alt="Research & Development">
+                <div class="application-content">
+                    <strong>Research & Development:</strong>
+                    <p>Collaborate with AI research teams to build next-generation vehicular communication systems.</p>
+                    <a href="link-to-rd-paper.pdf" class="application-button">Read Paper</a>
+                </div>
+            </li>
+        </ul>
+    </section>        
+
+    <section id="paper">
+        <h2>MVX Research Paper</h2>
+        <p>The following paper introduced MVX, providing in-depth technical details about its design and applications:</p>
+        <div class="paper-image">
+            <img src="path-to-your-image.jpg" alt="MVX Research Paper Title and Abstract">
+        </div>
+        <p><a href="link-to-full-paper.pdf" class="download-link">Download the full paper (PDF)</a></p>
+    </section>
+
+    <section id="code-dataset">
+        <h2>MVX Code & Dataset</h2>
+        <p>We are excited to announce that the MVX code and dataset will be available soon! Stay tuned for updates as we prepare to share these resources with the community.</p>
+        <p>MVX will provide:</p>
+        <ul class="code-dataset-list">
+            <li><strong>Source Code:</strong> Access to the co-simulation framework for vehicular communication.</li>
+            <li><strong>Dataset:</strong> A comprehensive dataset for vehicular network simulations and digital twin applications.</li>
+        </ul>
+    </section>
+
     <section id="cite">
         <h2>How to Cite MVX</h2>
-        <p>If you would like to use MVX in your research or publications, please use the following citation format:</p>
+        <p>If you would like to reference MVX in your research or publications, please use the following citation format:</p>
         <blockquote>
-            <p>"@ARTICLE{10660494,
-                author={Gharsallah, Ghazi and Kaddoum, Georges},
-                journal={IEEE Open Journal of the Communications Society}, 
-                title={MVX-ViT: Multimodal Collaborative Perception for 6G V2X Network Management Decisions Using Vision Transformer}, 
-                year={2024},
-                volume={},
-                number={},
-                pages={1-1},
-                keywords={Wireless communication;Wireless sensor networks;Collaboration;Sensors;Accuracy;6G mobile communication;Base stations;6G;V2X;collaborative perception;vision transformer;network management},
-                doi={10.1109/OJCOMS.2024.3452591}}"</p>
+            <p>"MVX Co-Simulation Framework: A Database for Advanced Digital Twin AI Applications in Vehicular Communication. Version 1.0. 2024."</p>
         </blockquote>
         <p>For more details or other citation formats, please contact us directly or refer to the <a href="#contact">contact section</a>.</p>
     </section>
 
     <section id="contact">
         <h2>Get in Touch</h2>
-        <p>Have questions about MVX or want to collaborate? Reach out to us.</p>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <p>If you would like to reach out to us for more information or collaboration opportunities, feel free to email us directly by clicking the button below:</p>
+        <a href="mailto:your-email@example.com" class="email-button">Contact Us</a>
     </section>
 
     <footer>
