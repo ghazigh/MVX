@@ -73,22 +73,50 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background-image: url('hero-bg.jpg'); /* Replace with the path to your image */
+            background-size: cover; /* Ensures the image covers the entire section */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
             color: white;
             text-align: center;
-            padding: 150px 0 100px;
+            padding: 150px 0 250px;
+            position: relative; /* Keep this for any positioning of content inside the hero */
+        }
+
+        /* Optional: Add an overlay to make text more readable */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* A semi-transparent black overlay */
+            z-index: 0;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 5rem;
             margin-bottom: 1rem;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
+            font-size: 2rem;
+            max-width: 1000px;
             margin: 0 auto 2rem;
         }
+        .hero .cta-button {
+            position: relative;
+            z-index: 1; /* Make sure the content is above the overlay */
+        }
+
+
+
+
+
+
+
+
 
         .cta-button {
             display: inline-block;
@@ -137,7 +165,8 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            max-width: 600px;
+            max-width: 700px;
+            min-width: 700px;
             text-align: center;
         }
 
@@ -222,6 +251,77 @@
             color: var(--primary-color);
         }
 
+        /* Styling for the MVX paper section */
+        .paper-content {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .paper-content img {
+            max-width: 70%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for the citation section */
+        .citation-content {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .citation-content pre {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+        }
+
+        /* Styling for MVX Code and Dataset section */
+        .coming-soon-content {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+
+        .coming-soon-content p {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .icon {
+            text-align: center;
+        }
+
+        .icon img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .icon p {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+
+
         .about {
             background-color: var(--primary-color);
             color: white;
@@ -271,9 +371,11 @@
             <div class="logo">MVX</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#simulations">Simulations</a></li>
                 <li><a href="#key-features">Features</a></li>
                 <li><a href="#applications">Applications</a></li>
-                <li><a href="#simulations">Simulations</a></li>
+                <li><a href="#mvx-code-dataset">Code & Dataset</a></li>
+                <li><a href="#mvx-paper">Paper</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -283,9 +385,18 @@
     <main>
         <section id="home" class="hero">
             <div class="container">
-                <h1>Revolutionizing 6G V2X with Digital Twins</h1>
-                <p>MVX is the world’s first configurable and scalable co-simulation framework that incorporates realistic physical world simulation with a differentiable accurate ray tracing wireless simulation that generates multi-agent and multimodal datasets for AI-driven digital twin applications in vehicular communication systems.</p>
-                <a href="#contact" class="cta-button">Get Started</a>
+                <h1>MVX</h1>
+                <p>Revolutionizing 6G V2X with Digital Twins</p>
+                <a href="#simulations" class="cta-button">Get Started</a>
+            </div>
+        </section>
+
+        <section id="aabout" class="section">
+            <div class="container">
+                <h2>About MVX</h2>
+                <div style="text-align: center;">  
+                    <p>MVX is the world’s first configurable and scalable co-simulation framework that incorporates realistic physical world simulation with a differentiable accurate ray tracing wireless simulation that generates multi-agent and multimodal datasets for AI-driven digital twin applications in vehicular communication systems.</p>
+                </div>
             </div>
         </section>
 
@@ -355,6 +466,51 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="mvx-code-dataset" class="section">
+            <div class="container">
+                <h2>MVX Code and Dataset</h2>
+                <div class="coming-soon-content">
+                    <p>
+                        The MVX code and dataset will be available soon.
+                    </p>
+                    <p>
+                        Stay tuned for updates!
+                    </p>
+                    <div class="icons">
+                        <div class="icon">
+                            <img src="code.png" alt="Code Icon">
+                            <p>MVX Code</p>
+                        </div>
+                        <div class="icon">
+                            <img src="dataset.png" alt="Dataset Icon">
+                            <p>MVX Dataset</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="mvx-paper" class="section">
+            <div class="container">
+                <h2>MVX Paper</h2>
+                <div class="paper-content">
+                    <img src="paper.jpg" alt="MVX Paper Title and Abstract">
+                </div>
+            </div>
+        </section>
+        
+        <section id="citation" class="section">
+            <div class="container">
+                <h2>How to Cite the MVX Paper</h2>
+                <div class="citation-content">
+                    <p>
+                        If you wish to reference our research paper in your work, please use the following citation:
+                    </p>
+                    <pre>@ARTICLE{10660494, author={Gharsallah, Ghazi and Kaddoum, Georges}, journal={IEEE Open Journal of the Communications Society}, title={MVX-ViT: Multimodal Collaborative Perception for 6G V2X Network Management Decisions Using Vision Transformer}, year={2024}, volume={}, number={}, pages={1-1}, keywords={Wireless communication;Wireless sensor networks;Collaboration;Sensors;Accuracy;6G mobile communication;Base stations;6G;V2X;collaborative perception;vision transformer;network management}, doi={10.1109/OJCOMS.2024.3452591}}</pre>
+                </div>
+            </div>
         </section>        
 
         <section id="about" class="section about">
@@ -365,7 +521,7 @@
                         <p>We are a team of passionate AI researchers and engineers dedicated to pushing the boundaries of 6G V2X technology. Our mission is to create a safer, more efficient, and sustainable future for transportation and smart cities.</p>
                     </div>
                     <div class="about-image">
-                        <img src="/api/placeholder/500/300" alt="AI-powered city infrastructure">
+                        <img src="feature.jpg" alt="AI-powered city infrastructure">
                     </div>
                 </div>
             </div>
@@ -376,7 +532,7 @@
         <div class="container">
             <h2>Contact Us</h2>
             <p>Ready to transform your V2X infrastructure? Get in touch with us today!</p>
-            <p>Email: info@nexusai.com | Phone: (555) 123-4567</p>
+            <p>Email: gharsallahghazi@gmail.com </p>
         </div>
     </footer>
 
