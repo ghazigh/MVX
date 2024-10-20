@@ -122,16 +122,37 @@
             gap: 2rem;
         }
 
+        /* Vertical layout for key features and applications with images */
+        .vertical-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+
         .card {
             background-color: white;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 600px;
+            text-align: center;
         }
 
         .card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
         }
 
         .card h3 {
@@ -139,6 +160,12 @@
             margin-bottom: 1rem;
             color: var(--primary-color);
         }
+
+        .card p {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
 
         .simulations {
             background-color: #f9f9f9;
@@ -152,6 +179,15 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s ease;
             position: relative;
+            max-height: 600px; /* Adjust as necessary for your layout */
+        }
+
+        .simulation-video video {
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* Ensure the video covers the container while maintaining aspect ratio */
+            max-height: 100%;  /* Keeps the video within the container's max height */
+            display: block;
         }
 
         .simulation-video::after {
@@ -258,70 +294,68 @@
                 <h2>Digital Twin Simulations</h2>
                 <div class="grid">
                     <div class="simulation-video">
-                        <video controls width="100%">
+                        <video autoplay loop muted playsinline>
                             <source src="MVX.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <h3>Physical Environment Simulation</h3>
                     </div>
                     <div class="simulation-video">
-                        <video controls width="100%">
-                            <source src="F3.png" type="video/mp4">
+                        <video autoplay loop muted playsinline>
+                            <source src="MVX.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <h3>Wireless Environment Simulation</h3>
                     </div>
                 </div>
             </div>
-        </section>        
+        </section>      
 
         <section id="key-features" class="section">
             <div class="container">
                 <h2>Key Features</h2>
-                <div class="grid">
+                <div class="vertical-grid">
                     <div class="card">
-                        <h3>Ultra-Low Latency</h3>
-                        <p>Achieve near-instantaneous communication for critical V2X applications.</p>
+                        <img src="F1.png" alt="Real-time Co-Simulation">
+                        <h3>High-Fidelity Co-Simulation</h3>
+                        <p>MVX provides high-fidelity realistic co-simulation thanks to the realistic quality of the CARLA simulator and the high quality of Ray-traced wireless data of the sionna simulator.</p>
                     </div>
                     <div class="card">
-                        <h3>Massive MIMO Support</h3>
-                        <p>Utilize advanced antenna technologies for improved capacity and coverage.</p>
+                        <img src="F2.png" alt="AI Integration">
+                        <h3>Configurability</h3>
+                        <p>MVX provides a highly configurable simulation that allows all aspects of the physical world and the wireless environment to be manipulated.</p>
                     </div>
                     <div class="card">
-                        <h3>AI-Driven Optimization</h3>
-                        <p>Leverage machine learning for real-time network and traffic optimization.</p>
+                        <img src="F3.png" alt="Scalable Solutions">
+                        <h3>Multimodality</h3>
+                        <p>MVX is designed for large-scale vehicular communication systems, ensuring optimal performance under heavy loads.</p>
                     </div>
                     <div class="card">
-                        <h3>Quantum-Safe Security</h3>
-                        <p>Future-proof your V2X communication with quantum-resistant encryption.</p>
+                        <img src="F4.png" alt="Database Management">
+                        <h3>Multiple Maps</h3>
+                        <p></p>
                     </div>
                 </div>
             </div>
         </section>
-
+        
         <section id="applications" class="section">
             <div class="container">
                 <h2>Main Applications</h2>
-                <div class="grid">
+                <div class="vertical-grid">
                     <div class="card">
-                        <h3>Autonomous Driving</h3>
-                        <p>Enable safe and efficient autonomous vehicle operations in complex urban environments.</p>
+                        <img src="beam.png" alt="Real-time Co-Simulation">
+                        <h3></h3>
+                        <p>Beam Direction and LoS Blockage Prediction.</p>
                     </div>
                     <div class="card">
-                        <h3>Smart Traffic Management</h3>
-                        <p>Optimize traffic flow and reduce congestion in real-time across entire cities.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Emergency Response</h3>
-                        <p>Facilitate rapid and coordinated emergency vehicle routing and incident management.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Platooning and Convoy Systems</h3>
-                        <p>Enable efficient and safe vehicle platooning for improved fuel economy and traffic flow.</p>
+                        <img src="APO.png" alt="AI Integration">
+                        <h3></h3>
+                        <p>Antenna Position Optimization.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </section>        
 
         <section id="about" class="section about">
             <div class="container">
@@ -367,7 +401,7 @@
                     start: 'top 80%'
                 },
                 opacity: 0,
-                y: 50,
+                y: 0,
                 duration: 0.8,
                 stagger: 0.2,
                 ease: 'power3.out'
@@ -378,7 +412,7 @@
         gsap.utils.toArray('.simulation-video').forEach((video, index) => {
             gsap.to(video, {
                 y: "20px",
-                duration: 2,
+                duration: 8,
                 repeat: -1,
                 yoyo: true,
                 ease: "sine.inOut",
