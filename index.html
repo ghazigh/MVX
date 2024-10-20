@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVX - 6G V2X Digital Twin Solutions</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 150px 0 100px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .simulations {
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+
+        .simulation-video {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .simulation-video::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .simulation-video:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .simulation-video:hover::after {
+            opacity: 1;
+        }
+
+        .simulation-video img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .simulation-video h3 {
+            padding: 1rem;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .about {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">MVX</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#key-features">Features</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#simulations">Simulations</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Revolutionizing 6G V2X with Digital Twins</h1>
+                <p>MVX is the world’s first configurable and scalable co-simulation framework that incorporates realistic physical world simulation with a differentiable accurate ray tracing wireless simulation that generates multi-agent and multimodal datasets for AI-driven digital twin applications in vehicular communication systems.</p>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+        </section>
+
+        <section id="simulations" class="section simulations">
+            <div class="container">
+                <h2>Digital Twin Simulations</h2>
+                <div class="grid">
+                    <div class="simulation-video">
+                        <video controls width="100%">
+                            <source src="MVX.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <h3>Physical Environment Simulation</h3>
+                    </div>
+                    <div class="simulation-video">
+                        <video controls width="100%">
+                            <source src="F3.png" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <h3>Wireless Environment Simulation</h3>
+                    </div>
+                </div>
+            </div>
+        </section>        
+
+        <section id="key-features" class="section">
+            <div class="container">
+                <h2>Key Features</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Ultra-Low Latency</h3>
+                        <p>Achieve near-instantaneous communication for critical V2X applications.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Massive MIMO Support</h3>
+                        <p>Utilize advanced antenna technologies for improved capacity and coverage.</p>
+                    </div>
+                    <div class="card">
+                        <h3>AI-Driven Optimization</h3>
+                        <p>Leverage machine learning for real-time network and traffic optimization.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Quantum-Safe Security</h3>
+                        <p>Future-proof your V2X communication with quantum-resistant encryption.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="applications" class="section">
+            <div class="container">
+                <h2>Main Applications</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Autonomous Driving</h3>
+                        <p>Enable safe and efficient autonomous vehicle operations in complex urban environments.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Smart Traffic Management</h3>
+                        <p>Optimize traffic flow and reduce congestion in real-time across entire cities.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Emergency Response</h3>
+                        <p>Facilitate rapid and coordinated emergency vehicle routing and incident management.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Platooning and Convoy Systems</h3>
+                        <p>Enable efficient and safe vehicle platooning for improved fuel economy and traffic flow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About NexusAI</h2>
+                        <p>We are a team of passionate AI researchers and engineers dedicated to pushing the boundaries of 6G V2X technology. Our mission is to create a safer, more efficient, and sustainable future for transportation and smart cities.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="/api/placeholder/500/300" alt="AI-powered city infrastructure">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Ready to transform your V2X infrastructure? Get in touch with us today!</p>
+            <p>Email: info@nexusai.com | Phone: (555) 123-4567</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize GSAP and ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate hero section
+        gsap.from('.hero h1, .hero p, .hero .cta-button', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+
+        // Animate cards in all grid sections
+        gsap.utils.toArray('.section').forEach(section => {
+            gsap.from(section.querySelectorAll('.card'), {
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%'
+                },
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: 'power3.out'
+            });
+        });
+
+        // Floating animation for simulation videos
+        gsap.utils.toArray('.simulation-video').forEach((video, index) => {
+            gsap.to(video, {
+                y: "20px",
+                duration: 2,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: index * 0.2
+            });
+        });
+
+        // Parallax effect for simulation videos
+        gsap.utils.toArray('.simulation-video').forEach(video => {
+            gsap.to(video, {
+                y: () => -50,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: video,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+        });
+
+        // Animate about section
+        gsap.from('.about-content', {
+            scrollTrigger: {
+                trigger: '.about',
+                start: 'top 80%'
+            },
+            opacity: 0,
+            x: -50,
+            duration: 1,
+            ease: 'power3.out'
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
